@@ -1,11 +1,7 @@
 const Footer = () => {
   return (
-    <div style={{ backgroundColor: '#f0c1c6 ' }}>
+    <div className="footer">
       <center>
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
 
         <h5>Acerca de nosotros:</h5>
@@ -14,9 +10,9 @@ const Footer = () => {
         <p>Correo electronico: ArmoParts@gmail.com</p>
         <p>Todos los derechos reservados </p>
       </center>
-      <br />
     </div>
   )
 }
 
 export default Footer
+

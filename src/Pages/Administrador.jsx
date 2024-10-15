@@ -8,22 +8,23 @@ import { useState, useEffect } from 'react'
 const Administrador = () => {
 
   const [autope, setAutope] = useState([])
+
   const [error, setError] = useState('')
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchAutoPartes()
   }, [])
 
-  const fetchAutoPartes = async()=>{
+  const fetchAutoPartes = async () => {
 
-      try {
-        const r = await getAllAutoparte()
-        setAutope(r)
-        
+    try {
 
-      } catch (error) {
-        setError(error)
-      }
+      const r = await getAllAutoparte()
+      setAutope(r)
+
+    } catch (error) {
+      setError(error)
+    }
 
 
   }
@@ -47,20 +48,8 @@ const Administrador = () => {
           <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Crear
           </button>
-            
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+
+       
           <div className="barra">
             <label for="exampleDataList" className="form-label"></label>
             <input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar pedido..." />
@@ -70,31 +59,35 @@ const Administrador = () => {
 
         </div>
 
-      
 
 
-      
+
+
         <div className="marco">
           <table className="table">
             <thead>
               <tr>
                 <th scope="col">N° pedido</th>
-                <th scope="col">Fecha</th>
                 <th scope="col">Autoparte</th>
-              
+                <th scope='col'>Cantidad</th>
+                <th scope='col'>Creado por</th>
+
+
               </tr>
             </thead>
             <tbody className="table-group-divider">
-              {autope.map((a)=>
-                              <tr key={a.Id}>
-                              <td>{a.Id}</td>
-                              <td>{a.Nombre}</td>
-                              <td>Eliminar</td>
-                            </tr>
+              {autope.map((a) =>
+                <tr key={a.Id}>
+                  <td>{a.Id}</td>
+                  <td>{a.Nombre}</td>
+                  <td>{a.Cantidad}</td>
+                  <td></td>
+
+                </tr>
 
               )}
 
-              
+
 
             </tbody>
 
@@ -107,10 +100,7 @@ const Administrador = () => {
                   </div>
                   <div className="modal-body">
 
-                    <div className="input-group mb-3">
-                      <span className="input-group-text" id="inputGroup-sizing-default">Fecha</span>
-                      <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
-                    </div>
+
                     <div className="input-group mb-3">
                       <span className="input-group-text" id="inputGroup-sizing-default">Autoparte</span>
                       <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />

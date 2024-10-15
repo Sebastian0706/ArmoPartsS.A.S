@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div style={{ backgroundColor: '#f0c1c6 ' }}>
+      <div >
         <Layout />
       </div>
 
