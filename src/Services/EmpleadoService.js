@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const api = 'http://localhost:8085/listar'
+const api = 'http://localhost:8085/listarE'
 
-export const getAllAutoparte = async () => {
+export const getAllEmpleado = async () => {
     const respuesta = await axios.get(api)
     return respuesta.data
 }
-

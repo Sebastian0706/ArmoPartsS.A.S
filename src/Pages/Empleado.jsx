@@ -1,26 +1,26 @@
 import axios from 'axios'
 import React from 'react'
-import { getAllAutoparte } from '../Services/AutoparteService.js'
+import { getAllEmpleado } from '../Services/EmpleadoService.js'
 
 import { useState, useEffect } from 'react'
 
 
-const Administrador = () => {
+const Empleado = () => {
 
-  const [autope, setAutope] = useState([])
+  const [autope, setEmpleado] = useState([])
 
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetchAutoPartes()
+    fetchEmpleado()
   }, [])
 
-  const fetchAutoPartes = async () => {
+  const fetchEmpleado = async () => {
 
     try {
 
-      const r = await getAllAutoparte()
-      setAutope(r)
+      const r = await getAllEmpleado()
+      setEmpleado(r)
 
     } catch (error) {
       setError(error)
@@ -39,7 +39,7 @@ const Administrador = () => {
 
         <br />
 
-        <h3>Autopartes</h3>
+        <h3>Empleados</h3>
 
         <br />
 
@@ -69,6 +69,7 @@ const Administrador = () => {
               <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
                 
 
 
@@ -78,8 +79,8 @@ const Administrador = () => {
               {autope.map((a) =>
                 <tr key={a.Id}>
                   <td>{a.Id}</td>
-                  <td>{a.Nombre}</td>
-                 
+                  <td>{a.Primer_Nom}</td>
+                  <td>{a.Primer_Ape}</td>
 
                 </tr>
 
@@ -93,7 +94,7 @@ const Administrador = () => {
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Crear pedido</h1>
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Crear autoparte</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div className="modal-body">
@@ -131,4 +132,4 @@ const Administrador = () => {
   )
 }
 
-export default Administrador
+export default Empleado

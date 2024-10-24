@@ -16,9 +16,15 @@ const Navegacion = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Administrador">Administrador </Link>
+                <Link className="nav-link" to="/listar">Autoparte </Link>
               </li>
 
+              <li className="nav-item">
+                <Link className="nav-link" to="/listarE">Empleado </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/listarP">Pedido</Link>
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Login">Iniciar sesion </Link>
               </li>
